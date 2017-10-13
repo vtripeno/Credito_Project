@@ -55,6 +55,10 @@
 		function popularCombo(id, url) {
 			var array = httpGet(url).cars;   
 			var sel = document.getElementById(id);
+			var opt = document.createElement('option');
+		    opt.innerHTML = "Selecione ....";
+		    opt.value = "";
+		    sel.appendChild(opt);
 			for(var i = 0; i < array.length; i++) {
 			    var opt = document.createElement('option');
 			    opt.innerHTML = array[i].name;
@@ -69,6 +73,11 @@
 	        var selecao = document.getElementById(comb);
 	        selecao.hidden = false;
 	        selecao.disabled = false;
+	        if(selecao != null) {
+	        	while (selecao.options.length > 0) {                
+			        selecao.remove(0);
+			    }
+	        }
 	        if (id1 === "") {
 	        	id1 = sel.options[sel.selectedIndex].value;
 	        	popularCombo(comb, url+id1+".json");
