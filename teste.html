@@ -2,6 +2,8 @@
 <head>
 	<script type="text/javascript">
 		
+		var id1 = "";
+
 		function getAjax(url, success) {
 		    var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 		    xhr.open('GET', url);
@@ -18,11 +20,11 @@
 		    var xmlHttp = new XMLHttpRequest();
 		    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
 		    xmlHttp.send( null );
-		    alert(JSON.stringify(xmlHttp.responseText));
+		    //alert(JSON.stringify(xmlHttp.responseText));
 		    var json = JSON.stringify(eval("({'cars':" + xmlHttp.responseText + "})"));
-		    alert(json);
+		    //alert(json);
 		    var obj = JSON.parse(json);
-		    alert(obj.cars[1].name);
+		    //alert(obj.cars[1].name);
 		    x = ""
 			for (i in obj.cars) {
 			    console.log(obj.cars[i].name);
@@ -49,6 +51,33 @@
 			    selectList.appendChild(option);
 			}
 		}
+
+		function popularCombo(id, url) {
+			var array = httpGet(url).cars;   
+			var sel = document.getElementById(id);
+			for(var i = 0; i < array.length; i++) {
+			    var opt = document.createElement('option');
+			    opt.innerHTML = array[i].name;
+			    opt.value = array[i].id;
+			    sel.appendChild(opt);
+			}
+		}
+
+		function myNewFunction(sel, comb, url) {
+	        //alert(sel.options[sel.selectedIndex].text);
+	        //alert(sel.options[sel.selectedIndex].value);
+	        var selecao = document.getElementById(comb);
+	        selecao.hidden = false;
+	        selecao.disabled = false;
+	        if (id1 === "") {
+	        	id1 = sel.options[sel.selectedIndex].value;
+	        	popularCombo(comb, url+id1+".json");
+	        } else {
+	        	popularCombo(comb, url+id1+"/"+sel.options[sel.selectedIndex].value+".json");
+	        }
+
+	    }
+
 		
 		// example request
 		//getAjax('http://fipeapi.appspot.com/api/1/carros/veiculo/21/4828/2013-1.json', function(data){ console.log(data); });
@@ -56,11 +85,16 @@
 
 </head>
 
-<body onload="criarCombo()">
+<body onload="criarCombo(); popularCombo('marcasCombo', 'http://fipeapi.appspot.com/api/1/carros/marcas.json')">
 	<button onclick="httpGet('http://fipeapi.appspot.com/api/1/carros/marcas.json');">CLICA</button>
 	<button onclick="getAjax('http://fipeapi.appspot.com/api/1/carros/veiculo/21/4828/2013-1.json', function(data){ console.log(data); });">CLICA2</button>
 
 	<br/>
 	<div id="myDiv"></div>
+
+	<select id="marcasCombo" onChange="myNewFunction(this, 'carrosCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculos/');"></select>
+	<select id="carrosCombo" hidden="true" disabled="true" onChange="myNewFunction(this, 'carrosAnoCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculo/');"></select>
+	<select id="carrosAnoCombo" hidden="true" disabled="true" ></select>
+
 </body>
 </html>
