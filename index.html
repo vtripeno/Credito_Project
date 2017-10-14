@@ -91,11 +91,13 @@
 
 		    }
 
-		    function getValorJson(idComb, idTarget, valor, url) {
+		    function getValorJson(idComb, url) {
 		    	var elemento = document.getElementById(idComb).value;
 		    	var json = httpGet(url + id3 + "/" + elemento + ".json").cars;
-		    	var elementoTarget = document.getElementById(idTarget);
-		    	elementoTarget.innerHTML = json[valor];
+		    	var elementoTarget = document.getElementById('valor');
+		    	var elementoTarget2 = document.getElementById('nome');
+		    	elementoTarget2.innerHTML = json.name;
+		    	elementoTarget.innerHTML = json.preco;
 
 		    }
 
@@ -116,7 +118,8 @@
 		<select id="marcasCombo" onChange="myNewFunction(this, 'carrosCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculos/');"></select>
 		<select id="carrosCombo" hidden="true" disabled="true" onChange="myNewFunction(this, 'carrosAnoCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculo/');"></select>
 		<select id="carrosAnoCombo" hidden="true" disabled="true" ></select>
-		<button onclick="getValorJson('carrosAnoCombo', 'valor', 'preco', 'http://fipeapi.appspot.com/api/1/carros/veiculo/')">CLICAE</button>
+		<button onclick="getValorJson('carrosAnoCombo','http://fipeapi.appspot.com/api/1/carros/veiculo/')">CLICAE</button>
+		<h1 id='nome'></h1>
 		<h1 id='valor'></h1>
 
 		<br/>
