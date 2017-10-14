@@ -95,7 +95,7 @@
 		    	var elemento = document.getElementById(idComb).value;
 		    	var json = httpGet(url + id3 + "/" + elemento + ".json").cars;
 		    	var elementoTarget = document.getElementById(idTarget);
-		    	elementoTarget.innerHTML = json.preco;
+		    	elementoTarget.innerHTML = json[valor];
 
 		    }
 
