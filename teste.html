@@ -3,6 +3,8 @@
 		<script type="text/javascript">
 			
 			var id1 = "";
+			var id2 = "";
+			var id2 = "";
 
 			function getAjax(url, success) {
 			    var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
@@ -82,8 +84,18 @@
 		        	id1 = sel.options[sel.selectedIndex].value;
 		        	popularCombo(comb, url+id1+".json");
 		        } else {
-		        	popularCombo(comb, url+id1+"/"+sel.options[sel.selectedIndex].value+".json");
+		        	id2 = sel.options[sel.selectedIndex].value;
+		        	popularCombo(comb, url+id1+"/"+ id2 +".json");
+		        	id3 = id1+"/"+ id2;
 		        }
+
+		    }
+
+		    function getValorJson(idComb, idTarget, valor, url) {
+		    	var elemento = document.getElementById(idComb).value;
+		    	var json = httpGet(url + id3 + "/" + elemento + ".json").cars;
+		    	var elementoTarget = document.getElementById(idTarget);
+		    	elementoTarget.innerHTML = json.preco;
 
 		    }
 
@@ -104,6 +116,8 @@
 		<select id="marcasCombo" onChange="myNewFunction(this, 'carrosCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculos/');"></select>
 		<select id="carrosCombo" hidden="true" disabled="true" onChange="myNewFunction(this, 'carrosAnoCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculo/');"></select>
 		<select id="carrosAnoCombo" hidden="true" disabled="true" ></select>
+		<button onclick="getValorJson('carrosAnoCombo', 'valor', 'preco', 'http://fipeapi.appspot.com/api/1/carros/veiculo/')">CLICAE</button>
+		<h1 id='valor'></h1>
 
 	</body>
 </html>
