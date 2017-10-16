@@ -37,3 +37,40 @@ body {
     height: 40px;
     border-left: 1px solid #f2f2f2;
 }
+
+.button-donate {
+    display: block;
+    margin: 0 auto;
+    border-radius: 45px;
+    text-align:center;
+    background-color: #0F78D4;
+    color: white;
+    width: 12em;
+    height: 3em;
+}
+
+.button-blog {
+    display: block;
+    margin: 0 auto;
+    border-radius: 45px;
+    text-align:center;
+    background-color: #ff751a;
+    color: white;
+    width: 12em;
+    height: 3em;
+}
+
+.button-donate-carousel {
+    display: block;
+    margin: 0 auto;
+    border-radius: 45px;
+    text-align:center;
+    background-color: #5cb85c;
+    color: white;
+    width: 12em;
+    height: 3em;
+}
+
+header {
+    height: 10px;
+}
