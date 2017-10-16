@@ -60,15 +60,15 @@
 			    	</div>
 
 			    	<div class="col-sm-12">
-					<select id="marcasCombo" onChange="fazerConsultaFipe(this, 'carrosCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculos/');"></select><br/>
-					<select id="carrosCombo" hidden="true" disabled="true" onChange="fazerConsultaFipe(this, 'carrosAnoCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculo/');"></select><br/>
-					<select id="carrosAnoCombo" hidden="true" disabled="true" ></select>
+					<select id="marcasCombo" onchange="fazerConsultaFipe(this, 'carrosCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculos/');"></select><br/>
+					<select id="carrosCombo" hidden="true" disabled="true" onchange="fazerConsultaFipe(this, 'carrosAnoCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculo/');"></select><br/>
+					<select id="carrosAnoCombo" hidden="true" disabled="true" onchange="ativarElemento('btnCalcular')"></select>
 				</div>
 			</section>
 
 			<section class="row" style="background-color: white;">
 				<div class="col-sm-12">
-					<button onclick="getValorJson('carrosAnoCombo','http://fipeapi.appspot.com/api/1/carros/veiculo/')">Calcular</button><br>
+					<button disabled="true"  id="btnCalcular" onclick="getValorJson('carrosAnoCombo','http://fipeapi.appspot.com/api/1/carros/veiculo/')">Calcular</button><br>
 				</div>
 			</section>
 			<section class="row" style="background-color: white;">

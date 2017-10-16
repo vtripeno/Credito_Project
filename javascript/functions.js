@@ -78,8 +78,7 @@ function fazerConsultaFipe(sel, comb, url) {
     //alert(sel.options[sel.selectedIndex].text);
     //alert(sel.options[sel.selectedIndex].value);
     var selecao = document.getElementById(comb);
-    selecao.hidden = false;
-    selecao.disabled = false;
+    ativarElemento(comb);
     if(selecao != null) {
         while (selecao.options.length > 0) {
             selecao.remove(0);
@@ -97,6 +96,12 @@ function getValorJson(idComb, url) {
     elementoTarget2.innerHTML = json.name;
     elementoTarget.innerHTML = json.preco;
 
+}
+
+function ativarElemento(id) {
+    var  elemento = document.getElementById(id);
+    elemento.hidden = false;
+    elemento.disabled = false;
 }
 
 
