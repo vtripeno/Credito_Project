@@ -1,5 +1,52 @@
 <html>
 	<head>
+		<meta charset="utf-8">
+
+		<script>
+			//Verifica se CPF é válido
+			function TestaCPF(strCPF) {
+				var Soma, Resto, borda_original;
+				Soma = 0;
+		
+				if (strCPF == "00000000000"){
+					document.getElementById("cpf").setCustomValidity('Invalid');
+					return false;
+				}
+		
+				for (i=1; i<=9; i++){
+					Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
+				}
+		
+				Resto = (Soma * 10) % 11;
+				if ((Resto == 10) || (Resto == 11)){
+					Resto = 0;
+				}
+		
+				if (Resto != parseInt(strCPF.substring(9, 10))){
+					document.getElementById("cpf").setCustomValidity('Invalid');
+					return false;
+				}
+		
+				Soma = 0;
+				for (i = 1; i <= 10; i++){
+					Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
+				}
+		
+				Resto = (Soma * 10) % 11;
+				if ((Resto == 10) || (Resto == 11)){
+					Resto = 0;
+				}
+		
+				if (Resto != parseInt(strCPF.substring(10, 11))){
+					document.getElementById("cpf").setCustomValidity('Invalid');
+					return false;
+				}
+		
+				document.getElementById("cpf").setCustomValidity('');
+				return true;
+			}
+		</script>
+
 		<script type="text/javascript">
 			
 			var id1 = "";
@@ -105,7 +152,7 @@
 			// example request
 			//getAjax('http://fipeapi.appspot.com/api/1/carros/veiculo/21/4828/2013-1.json', function(data){ console.log(data); });
 		</script>
-
+		<title> POR UM TITULO </title>
 	</head>
 
 	<body onload="popularCombo('marcasCombo', 'http://fipeapi.appspot.com/api/1/carros/marcas.json')">
@@ -115,15 +162,43 @@
 		<br/>
 		<div id="myDiv"></div>-->
 
+		<div id="head">
+			<h1> == Título == </h1>
+			<p> == texto ==</p>
+		</div>
+
+		<div class="container">
+        	<div class="row"> 
+            	<h1> Empréstimo </h1><br><br>
+            	
+            	<p>Quer fazer um empréstimo? Vamos lá!</p>
+
+   
+    			<form id="cpf_form" class="form-horizontal">
+     				<div class="form-group">
+     			 		CPF<br><input id="cpf" name="cpf" required="required" pattern="[0-9]+$" maxlength="11" size="11" placeholder="CPF" onblur="TestaCPF(this.value)"/>
+     				</div>
+    		    </form>
+            </div>
+    	</div>
+
+    	Valor do empréstimo <br><input type="text" name="valor"><br>
+
+    	<p> Quanto vale seu veículo? </p>    	
+
 		<select id="marcasCombo" onChange="myNewFunction(this, 'carrosCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculos/');"></select>
 		<select id="carrosCombo" hidden="true" disabled="true" onChange="myNewFunction(this, 'carrosAnoCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculo/');"></select>
 		<select id="carrosAnoCombo" hidden="true" disabled="true" ></select>
-		<button onclick="getValorJson('carrosAnoCombo','http://fipeapi.appspot.com/api/1/carros/veiculo/')">CLICAE</button>
-		<h1 id='nome'></h1>
-		<h1 id='valor'></h1>
+
+		<button onclick="getValorJson('carrosAnoCombo','http://fipeapi.appspot.com/api/1/carros/veiculo/')">Calcular</button><br>
+
+
+
+		<br>== validar cpf
+		<br>== validar cpf: inadimplencia/pendencia
 
 		<br/>
 		<br/>
-		<a href="views/primeiroForm.html"><button>botao</button></a>
+		<a href="views/propostas.html"><button>Ver propostas</button></a>
 	</body>
 </html>
