@@ -32,55 +32,61 @@
 					<h1> == Título == </h1>
 					<p> == texto ==</p>
 				</div>
-			</section>
-		        	<section class="row" style="background-color: white;">
-			            <div class="col-sm-12">
-			            		<h1> Empréstimo </h1>
-			            </div>
-			            <div class="col-sm-12">
-				            	<p>Quer fazer um empréstimo? Vamos lá!</p>
-
-		    			<form id="cpf_form" class="form-horizontal">
-		     				<!--<div class="form-group">-->
-	     			 		CPF<br><input id="cpf" name="cpf" required="required" pattern="[0-9]+$" maxlength="11" size="11" placeholder="CPF" onblur="testaCPF(this.value)"/>
-		     				<!--</div>-->
-					</form>
-					<br>== validar cpf
-					<br>== validar cpf: inadimplencia/pendencia
-				</div>
-		           </section>
-
-		           <section class="row" style="background-color: white;">
-		           		<div class="col-sm-12">
-			            		Valor do empréstimo <br><input type="text" name="valor">
-			            	</div>
-			</section>
-
-			<section class="row" style="background-color: white;">
-				<div class="col-sm-12">
-			    		<p> Quanto vale seu veículo? </p>
-			    	</div>
-
-			    	<div class="col-sm-12">
-					<select id="marcasCombo" onchange="fazerConsultaFipe(this, 'carrosCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculos/');"></select><br/>
-					<select id="carrosCombo" hidden="true" disabled="true" onchange="fazerConsultaFipe(this, 'carrosAnoCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculo/');"></select><br/>
-					<select id="carrosAnoCombo" hidden="true" disabled="true" onchange="ativarElemento('btnCalcular')"></select>
+				<div class="col-sm-12" >
+					<button onclick="ativarElemento('simulacao')">Simulação</button>
 				</div>
 			</section>
 
-			<section class="row" style="background-color: white;">
-				<div class="col-sm-12">
-					<button disabled="true"  id="btnCalcular" onclick="getValorJson('carrosAnoCombo','http://fipeapi.appspot.com/api/1/carros/veiculo/')">Calcular</button><br>
-				</div>
-			</section>
-			<section class="row" style="background-color: white;">
+			<div id="simulacao" hidden="true">
+			        	<section class="row" style="background-color: white;">
+				            <div class="col-sm-12">
+				            		<h1> Empréstimo </h1>
+				            </div>
+				            <div class="col-sm-12">
+					            	<p>Quer fazer um empréstimo? Vamos lá!</p>
 
-				<div class="col-sm-12">
-					<h1 id='nome'></h1>
-					<h1 id='valor'></h1>
-					<a href="views/propostas.html"><button>Ver propostas</button></a>
-				</div>
-			</section>
+			    			<form id="cpf_form" class="form-horizontal">
+			     				<!--<div class="form-group">-->
+		     			 		CPF<br><input id="cpf" name="cpf" required="required" pattern="[0-9]+$" maxlength="11" size="11" placeholder="CPF" onblur="testaCPF(this.value)"/>
+			     				<!--</div>-->
+						</form>
+						<br>== validar cpf
+						<br>== validar cpf: inadimplencia/pendencia
+					</div>
+			           </section>
+
+			           <section class="row" style="background-color: white;">
+			           		<div class="col-sm-12">
+				            		Valor do empréstimo <br><input type="text" name="valor">
+				            	</div>
+				</section>
+
+				<section class="row" style="background-color: white;">
+					<div class="col-sm-12">
+				    		<p> Quanto vale seu veículo? </p>
+				    	</div>
+
+				    	<div class="col-sm-12">
+						<select id="marcasCombo" onchange="fazerConsultaFipe(this, 'carrosCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculos/');"></select><br/>
+						<select id="carrosCombo" hidden="true" disabled="true" onchange="fazerConsultaFipe(this, 'carrosAnoCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculo/');"></select><br/>
+						<select id="carrosAnoCombo" hidden="true" disabled="true" onchange="ativarElemento('btnCalcular')"></select>
+					</div>
+				</section>
+
+				<section class="row" style="background-color: white;">
+					<div class="col-sm-12">
+						<button disabled="true"  id="btnCalcular" onclick="getValorJson('carrosAnoCombo','http://fipeapi.appspot.com/api/1/carros/veiculo/')">Calcular</button><br>
+					</div>
+				</section>
+				<section class="row" style="background-color: white;">
+
+					<div class="col-sm-12">
+						<h1 id='nome'></h1>
+						<h1 id='valor'></h1>
+						<a href="views/propostas.html"><button>Ver propostas</button></a>
+					</div>
+				</section>
+			</div>
 	    	</div>
 
 	    	 <!-- Optional JavaScript -->
