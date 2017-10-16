@@ -1,166 +1,13 @@
 <html>
 	<head>
-		<meta charset="utf-8">
+		<script type="text/javascript" src="jquery-1.8.3.js"></script>
+		 <script src="javascript/functions.js"></script>
 
-		<script>
-			//Verifica se CPF é válido
-			function TestaCPF(strCPF) {
-				var Soma, Resto, borda_original;
-				Soma = 0;
-		
-				if (strCPF == "00000000000"){
-					document.getElementById("cpf").setCustomValidity('Invalid');
-					return false;
-				}
-		
-				for (i=1; i<=9; i++){
-					Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
-				}
-		
-				Resto = (Soma * 10) % 11;
-				if ((Resto == 10) || (Resto == 11)){
-					Resto = 0;
-				}
-		
-				if (Resto != parseInt(strCPF.substring(9, 10))){
-					document.getElementById("cpf").setCustomValidity('Invalid');
-					return false;
-				}
-		
-				Soma = 0;
-				for (i = 1; i <= 10; i++){
-					Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
-				}
-		
-				Resto = (Soma * 10) % 11;
-				if ((Resto == 10) || (Resto == 11)){
-					Resto = 0;
-				}
-		
-				if (Resto != parseInt(strCPF.substring(10, 11))){
-					document.getElementById("cpf").setCustomValidity('Invalid');
-					return false;
-				}
-		
-				document.getElementById("cpf").setCustomValidity('');
-				return true;
-			}
-		</script>
-
-		<script type="text/javascript">
-			
-			var id1 = "";
-			var id2 = "";
-			var id2 = "";
-
-			function getAjax(url, success) {
-			    var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-			    xhr.open('GET', url);
-			    xhr.onreadystatechange = function() {
-			        if (xhr.readyState>3 && xhr.status==200) success(xhr.responseText);
-			    };
-			    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-			    xhr.send();
-			    alert(JSON.stringify(xhr.responseText));
-			    return xhr;
-			}
-
-			function httpGet(theUrl) {
-			    var xmlHttp = new XMLHttpRequest();
-			    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-			    xmlHttp.send( null );
-			    //alert(JSON.stringify(xmlHttp.responseText));
-			    var json = JSON.stringify(eval("({'cars':" + xmlHttp.responseText + "})"));
-			    //alert(json);
-			    var obj = JSON.parse(json);
-			    //alert(obj.cars[1].name);
-			    x = ""
-				for (i in obj.cars) {
-				    console.log(obj.cars[i].name);
-				}
-			    return obj;
-			}
-
-			/*function criarCombo() {
-				var myDiv = document.getElementById("myDiv");
-
-				//Create array of options to be added
-				var array = httpGet('http://fipeapi.appspot.com/api/1/carros/marcas.json').cars;// ["Volvo","Saab","Mercades","Audi"];
-
-				//Create and append select list
-				var selectList = document.createElement("select");
-				selectList.id = "mySelect";
-				myDiv.appendChild(selectList);
-
-				//Create and append the options
-				for (var i = 0; i < array.length; i++) {
-				    var option = document.createElement("option");
-				    option.value = array[i].id;
-				    option.text = array[i].name;
-				    selectList.appendChild(option);
-				}
-			}*/
-
-			function popularCombo(id, url) {
-				var array = httpGet(url).cars;   
-				var sel = document.getElementById(id);
-				var opt = document.createElement('option');
-			    opt.innerHTML = "Selecione ....";
-			    opt.value = "";
-			    sel.appendChild(opt);
-				for(var i = 0; i < array.length; i++) {
-				    var opt = document.createElement('option');
-				    opt.innerHTML = array[i].name;
-				    opt.value = array[i].id;
-				    sel.appendChild(opt);
-				}
-			}
-
-			function myNewFunction(sel, comb, url) {
-		        //alert(sel.options[sel.selectedIndex].text);
-		        //alert(sel.options[sel.selectedIndex].value);
-		        var selecao = document.getElementById(comb);
-		        selecao.hidden = false;
-		        selecao.disabled = false;
-		        if(selecao != null) {
-		        	while (selecao.options.length > 0) {                
-				        selecao.remove(0);
-				    }
-		        }
-		        if (id1 === "") {
-		        	id1 = sel.options[sel.selectedIndex].value;
-		        	popularCombo(comb, url+id1+".json");
-		        } else {
-		        	id2 = sel.options[sel.selectedIndex].value;
-		        	popularCombo(comb, url+id1+"/"+ id2 +".json");
-		        	id3 = id1+"/"+ id2;
-		        }
-
-		    }
-
-		    function getValorJson(idComb, url) {
-		    	var elemento = document.getElementById(idComb).value;
-		    	var json = httpGet(url + id3 + "/" + elemento + ".json").cars;
-		    	var elementoTarget = document.getElementById('valor');
-		    	var elementoTarget2 = document.getElementById('nome');
-		    	elementoTarget2.innerHTML = json.name;
-		    	elementoTarget.innerHTML = json.preco;
-
-		    }
-
-			
-			// example request
-			//getAjax('http://fipeapi.appspot.com/api/1/carros/veiculo/21/4828/2013-1.json', function(data){ console.log(data); });
-		</script>
 		<title> POR UM TITULO </title>
+
 	</head>
 
 	<body onload="popularCombo('marcasCombo', 'http://fipeapi.appspot.com/api/1/carros/marcas.json')">
-		<!--<button onclick="httpGet('http://fipeapi.appspot.com/api/1/carros/marcas.json');">CLICA</button>
-		<button onclick="getAjax('http://fipeapi.appspot.com/api/1/carros/veiculo/21/4828/2013-1.json', function(data){ console.log(data); });">CLICA2</button>
-
-		<br/>
-		<div id="myDiv"></div>-->
 
 		<div id="head">
 			<h1> == Título == </h1>
@@ -168,26 +15,26 @@
 		</div>
 
 		<div class="container">
-        	<div class="row"> 
-            	<h1> Empréstimo </h1><br><br>
-            	
-            	<p>Quer fazer um empréstimo? Vamos lá!</p>
+		        	<div class="row">
+			            	<h1> Empréstimo </h1><br><br>
 
-   
-    			<form id="cpf_form" class="form-horizontal">
-     				<div class="form-group">
-     			 		CPF<br><input id="cpf" name="cpf" required="required" pattern="[0-9]+$" maxlength="11" size="11" placeholder="CPF" onblur="TestaCPF(this.value)"/>
-     				</div>
-    		    </form>
-            </div>
-    	</div>
+			            	<p>Quer fazer um empréstimo? Vamos lá!</p>
 
-    	Valor do empréstimo <br><input type="text" name="valor"><br>
 
-    	<p> Quanto vale seu veículo? </p>    	
+	    			<form id="cpf_form" class="form-horizontal">
+	     				<div class="form-group">
+	     			 		CPF<br><input id="cpf" name="cpf" required="required" pattern="[0-9]+$" maxlength="11" size="11" placeholder="CPF" onblur="TestaCPF(this.value)"/>
+	     				</div>
+				</form>
+		            </div>
+	    	</div>
 
-		<select id="marcasCombo" onChange="myNewFunction(this, 'carrosCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculos/');"></select>
-		<select id="carrosCombo" hidden="true" disabled="true" onChange="myNewFunction(this, 'carrosAnoCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculo/');"></select>
+	    	Valor do empréstimo <br><input type="text" name="valor"><br>
+
+	    	<p> Quanto vale seu veículo? </p>
+
+		<select id="marcasCombo" onChange="fazerConsultaFipe(this, 'carrosCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculos/');"></select>
+		<select id="carrosCombo" hidden="true" disabled="true" onChange="fazerConsultaFipe(this, 'carrosAnoCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculo/');"></select>
 		<select id="carrosAnoCombo" hidden="true" disabled="true" ></select>
 
 		<button onclick="getValorJson('carrosAnoCombo','http://fipeapi.appspot.com/api/1/carros/veiculo/')">Calcular</button><br>
@@ -199,6 +46,9 @@
 
 		<br/>
 		<br/>
+
+		<h1 id='nome'></h1>
+		<h1 id='valor'></h1>
 		<a href="views/propostas.html"><button>Ver propostas</button></a>
 	</body>
 </html>
