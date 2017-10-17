@@ -11,80 +11,42 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.0.2/bootstrap-social.css"  rel="stylesheet">
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  rel="stylesheet">
 
-
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script type="text/javascript" src="jquery-1.8.3.js"></script>
 		<script src="javascript/functions.js"></script>
 
-		<title> POR UM TITULO </title>
+		<title> Creditas </title>
 
+		<link href="css/custom.css" rel="stylesheet">
 	</head>
 
-	<body onload="popularCombo('marcasCombo', 'http://fipeapi.appspot.com/api/1/carros/marcas.json')">
-
-
-
-		<div class="container">
-			<section class="row" style="background-color: white;" id="head">
+	<body>
+		<div class="container" style="background-color: #1eb98a;">
+			<section class="row"  id="head">
 				<div class="col-sm-12">
-					<h1> == Título == </h1>
-					<p> == texto ==</p>
+					<img class="imagem" src="images/creditas.png" style="margin-left: auto; margin-right: auto; margin-top: 30px; margin-bottom: 30px;  width: 70%;"/>
 				</div>
 			</section>
-		        	<section class="row" style="background-color: white;">
-			            <div class="col-sm-12">
-			            		<h1> Empréstimo </h1>
-			            </div>
-			            <div class="col-sm-12">
-				            	<p>Quer fazer um empréstimo? Vamos lá!</p>
 
-		    			<form id="cpf_form" class="form-horizontal">
-		     				<div class="form-group">
-		     			 		CPF<br><input id="cpf" name="cpf" required="required" pattern="[0-9]+$" maxlength="11" size="11" placeholder="CPF" onblur="testaCPF(this.value)"/>
-		     				</div>
-					</form>
-					<br>== validar cpf
-					<br>== validar cpf: inadimplencia/pendencia
+			<section>
+				<div>
+					<h3> Empréstimos para intercambistas com veículo em garantia</h3>
 				</div>
-		           </section>
-
-		           <section class="row" style="background-color: white;">
-		           		<div class="col-sm-12">
-			            		Valor do empréstimo <br><input type="text" name="valor">
-			            	</div>
 			</section>
 
-			<section class="row" style="background-color: white;">
+		    <section class="row">
+			    <div class="col-sm-12">
+			   		<h1> Taxas mais baixas, transparência no processo e você embarcando para onde quiser! </h1><br>
+			    </div>
+			</section>
+			<section class="row">
 				<div class="col-sm-12">
-			    		<p> Quanto vale seu veículo? </p>
+					<div class="row">
+			        	<a href="views/primeiroForm.html"><button class="button" style="float: left;"><strong> SIMULE SEU EMPRÉSTIMO</strong><br> Conheça nossas taxas e parcelas</button></a>
+			        	<a href="views/segundoForm.html"><button class="button" style="float: right;"><strong> SOLICITE SEU EMPRÉSTIMO</strong><br> Envie seus dados para análise</button></a>
 			    	</div>
-
-			    	<div class="col-sm-12">
-					<select id="marcasCombo" onchange="fazerConsultaFipe(this, 'carrosCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculos/');"></select><br/>
-					<select id="carrosCombo" hidden="true" disabled="true" onchange="fazerConsultaFipe(this, 'carrosAnoCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculo/');"></select><br/>
-					<select id="carrosAnoCombo" hidden="true" disabled="true" onchange="ativarElemento('btnCalcular')"></select>
 				</div>
 			</section>
-
-			<section class="row" style="background-color: white;">
-				<div class="col-sm-12">
-					<button disabled="true"  id="btnCalcular" onclick="getValorJson('carrosAnoCombo','http://fipeapi.appspot.com/api/1/carros/veiculo/')">Calcular</button><br>
-				</div>
-			</section>
-			<section class="row" style="background-color: white;">
-
-				<div class="col-sm-12">
-					<h1 id='nome'></h1>
-					<h1 id='valor'></h1>
-					<a href="views/propostas.html"><button>Ver propostas</button></a>
-				</div>
-			</section>
-	    	</div>
-
-	    	 <!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+		</div>
 	</body>
 </html>
