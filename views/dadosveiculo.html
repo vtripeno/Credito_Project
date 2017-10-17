@@ -41,8 +41,12 @@
 
 			    	<div class=col-sm-4></div>
 			    	<div class="col-sm-4">
-			    		<p> Informe os dados do seu veículo </p>
-			    		<a href="#">Não tenho veículo próprio</a>
+			    		<p style="text-align: center;"> Informe os dados do seu veículo </p>
+			    		<a href="#">
+			    			<p style="text-align: center; font-size: 0.8em; color: blue">
+			    				<u>Não tenho veículo próprio</u>
+			    			</p>
+			    		</a>
 			    		<p id="pMarca" hidden="true">Marca:</p>
 					<select id="marcasCombo" hidden="true" onchange="fazerConsultaFipe(this, 'carrosCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculos/'); ativarElemento('pModelo')"></select><br/>
 					<p id="pModelo" hidden="true">Modelo:</p>
@@ -64,9 +68,9 @@
 			<section class="row">
 				<div class=col-sm-4></div>
 				<div class="col-sm-4">
-					<p><b>Nome do veículo</b></p>
+					<p><b>Nome do veículo:</b></p>
 					<p id='nome'></p>
-					<p><b>Valor do veículo</b></p>
+					<p><b>Valor do veículo:</b></p>
 					<p id='valor'></p>
 					<a href="propostas.html" onclick="salvarDadosVeiculo('nome', 'valor')"><button>VER MINHAS OPÇÕES</button></a>
 				</div>
