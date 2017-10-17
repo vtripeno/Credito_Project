@@ -67,7 +67,9 @@
 					<p id='nome'></p>
 					<p><b>Valor do veículo:</b></p>
 					<p id='valor'></p>
-					<a id="btnPropostas" class="disabled" href="propostas.html"   onclick="salvarDadosVeiculo('nome', 'valor')"><button  class="button-donate">VER MINHAS OPÇÕES</button></a>
+					<form action="propostas.html">
+					    <input id="btnPropostas" type="submit" class="button-donate disabled" onclick="salvarDadosVeiculo('nome', 'valor')" value="VER MINHAS OPÇÕES" />
+					</form>
 				</div>
 				<div class=col-sm-4></div>
 			</section>
