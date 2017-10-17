@@ -120,3 +120,12 @@ header {
 .tamanho-caixas {
     width: 30em;
 }
+
+.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+
+#p {
+    font-weight: bold;
+}

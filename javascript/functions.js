@@ -102,6 +102,7 @@ function ativarElemento(id) {
     var  elemento = document.getElementById(id);
     elemento.hidden = false;
     elemento.disabled = false;
+    elemento.classList.remove("disabled");
 }
 
 function salvarDadosVeiculo(id1, id2) {
