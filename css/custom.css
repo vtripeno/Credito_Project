@@ -82,10 +82,13 @@ body {
     margin: 0 auto;
     border-radius: 45px;
     text-align:center;
-    background-color: #0F78D4;
+    background-color: #99ff33;
     color: white;
-    width: 12em;
+    width: 18em;
     height: 3em;
+    font-size: 0.8em;
+    color: #004d1a;
+    font-weight: bold;
 }
 
 .button-blog {
