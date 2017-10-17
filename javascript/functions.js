@@ -104,6 +104,16 @@ function ativarElemento(id) {
     elemento.disabled = false;
 }
 
+function salvarDadosVeiculo(id1, id2) {
+    localStorage["car.nome"] = document.getElementById(id1).innerHTML;
+    localStorage["car.valor"] = document.getElementById(id2).innerHTML;
+}
+
+function carregarDadosVeiculo(id1, id2) {
+    document.getElementById(id1).innerHTML = localStorage["car.nome"];
+    document.getElementById(id2).innerHTML = localStorage["car.valor"];
+}
+
 
 // example request
 //getAjax('http://fipeapi.appspot.com/api/1/carros/veiculo/21/4828/2013-1.json', function(data){ console.log(data); });
