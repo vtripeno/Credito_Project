@@ -13,7 +13,6 @@
 
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script type="text/javascript" src="jquery-1.8.3.js"></script>
 		<script src="../javascript/functions.js"></script>
 
 		<title> POR UM TITULO </title>
@@ -43,11 +42,11 @@
 			    			</p>
 			    		</a>
 			    		<p id="pMarca" hidden="true">Marca:</p>
-					<select class="tamanho-caixas" id="marcasCombo" hidden="true" onchange="fazerConsultaFipe(this, 'carrosCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculos/'); ativarElemento('pModelo')"></select><br/>
+					<select class="tamanho-caixas selectpicker" id="marcasCombo" hidden="true" onchange="fazerConsultaFipe(this, 'carrosCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculos/'); ativarElemento('pModelo')"></select><br/>
 					<p id="pModelo" hidden="true">Modelo:</p>
-					<select id="carrosCombo" class="tamanho-caixas" hidden="true" disabled="true" onchange="fazerConsultaFipe(this, 'carrosAnoCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculo/'); ativarElemento('pAnoFab')"></select><br/>
+					<select id="carrosCombo" class="tamanho-caixas selectpicker" hidden="true" disabled="true" onchange="fazerConsultaFipe(this, 'carrosAnoCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculo/'); ativarElemento('pAnoFab')"></select><br/>
 					<p id="pAnoFab" hidden="true">Ano de fabricação:</p>
-					<select id="carrosAnoCombo" class="tamanho-caixas" hidden="true" disabled="true" onchange="ativarElemento('btnCalcular')"></select>
+					<select id="carrosAnoCombo" class="tamanho-caixas selectpicker" hidden="true" disabled="true" onchange="ativarElemento('btnCalcular')"></select>
 				</div>
 				<div class=col-sm-4></div>
 			</section>
