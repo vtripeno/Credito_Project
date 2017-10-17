@@ -20,11 +20,11 @@ p {
 
 body {
     font-family: AmpleSoft,sans-serif;
-}
-
-.container {
-    margin-top: 15px;
-    margin-bottom: 30px;
+    background: url(../images/bg-01.jpg) no-repeat center center fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
 }
 
 .button {
