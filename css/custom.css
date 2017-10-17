@@ -113,3 +113,7 @@ body {
 header {
     height: 10px;
 }
+
+.tamanho-caixas {
+    width: 30em;
+}
