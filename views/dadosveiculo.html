@@ -26,7 +26,7 @@
 
 
 
-		<div class="container container-center" style="background-color: #1eb98a;">
+		<div class="container " style="background-color: #1eb98a;">
 			 <section class="row"  id="head">
 				<div class="col-sm-12">
 				    <img class="imagem" src="../images/creditas.png" style="margin-left: auto; margin-right: auto; margin-top: 30px; margin-bottom: 30px;  width: 100%;"/>
@@ -34,12 +34,15 @@
 		            </section>
 
 			<section class="row" >
+
 				<div class="col-sm-12">
-			    		<p> Informe os dados do seu veículo </p>
-			    		<a href="#">Não tenho veículo próprio</a>
+
 			    	</div>
 
-			    	<div class="col-sm-12">
+			    	<div class=col-sm-4></div>
+			    	<div class="col-sm-4">
+			    		<p> Informe os dados do seu veículo </p>
+			    		<a href="#">Não tenho veículo próprio</a>
 			    		<p id="pMarca" hidden="true">Marca:</p>
 					<select id="marcasCombo" hidden="true" onchange="fazerConsultaFipe(this, 'carrosCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculos/'); ativarElemento('pModelo')"></select><br/>
 					<p id="pModelo" hidden="true">Modelo:</p>
@@ -47,23 +50,27 @@
 					<p id="pAnoFab" hidden="true">Ano de fabricação:</p>
 					<select id="carrosAnoCombo" hidden="true" disabled="true" onchange="ativarElemento('btnCalcular')"></select>
 				</div>
+				<div class=col-sm-4></div>
 			</section>
 
 			<section class="row">
-				<div class="col-sm-12">
+				<div class=col-sm-4></div>
+				<div class="col-sm-4">
 					<button disabled="true"  id="btnCalcular" onclick="getValorJson('carrosAnoCombo','http://fipeapi.appspot.com/api/1/carros/veiculo/')">Calcular</button><br>
 				</div>
+				<div class=col-sm-4></div>
 			</section>
 
 			<section class="row">
-
-				<div class="col-sm-12">
+				<div class=col-sm-4></div>
+				<div class="col-sm-4">
 					<p><b>Nome do veículo</b></p>
 					<p id='nome'></p>
 					<p><b>Valor do veículo</b></p>
 					<p id='valor'></p>
 					<a href="propostas.html" onclick="salvarDadosVeiculo('nome', 'valor')"><button>VER MINHAS OPÇÕES</button></a>
 				</div>
+				<div class=col-sm-4></div>
 			</section>
 	    	</div>
 
