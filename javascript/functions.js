@@ -110,9 +110,17 @@ function salvarDadosVeiculo(id1, id2) {
     localStorage["car.valor"] = document.getElementById(id2).innerHTML;
 }
 
+function salvarDadosCadastro(id1) {
+    localStorage["pessoa.emprestimo"] = document.getElementById(id1).value;
+}
+
 function carregarDadosVeiculo(id1, id2) {
     document.getElementById(id1).innerHTML = localStorage["car.nome"];
     document.getElementById(id2).innerHTML = localStorage["car.valor"];
+}
+
+function carregarDadosCadastro(id1) {
+    document.getElementById(id1).innerHTML = localStorage["pessoa.emprestimo"];
 }
 
 

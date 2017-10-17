@@ -27,7 +27,7 @@
 
     </head>
 
-    <body onload="carregarDadosVeiculo('nomeVeiculo', 'valorVeiculo')">
+    <body onload="carregarDadosVeiculo('nomeVeiculo', 'valorVeiculo'); carregarDadosCadastro('valorEmprestimo')">
 
 
 
@@ -37,11 +37,15 @@
             </section>
 
             <section class="row">
-                <div class="col-sm-12">
-                     <p>Nome do Veículo</p>
+                <div class="col-sm-6">
+                    <p>Nome do Veículo</p>
                     <p id="nomeVeiculo"></p>
                     <p>Valor do Veículo</p>
                     <p id="valorVeiculo"></p>
+                </div>
+                <div class="col-sm-6">
+                    <p>Valor Empréstimo</p>
+                    <p id="valorEmprestimo"></p>
                 </div>
             </section>
 
