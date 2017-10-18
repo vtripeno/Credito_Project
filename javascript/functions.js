@@ -130,7 +130,7 @@ function carregarDadosCadastro(id1) {
 }
 
 function validateForm(id) {
-  var fields = ["valoremprestimo", "nome", "cpf", "datanascimento", "email", "telefone"]
+  var fields = ["valoremprestimo", "nome", "email"/*, "cpf", "datanascimento", "telefone"*/]
 
   var i, l = fields.length;
   var fieldname;
