@@ -151,5 +151,16 @@ function validateForm(id) {
   return true;
 }
 
+/*$( document ).on( "mousemove", function( event ) {
+    console.log("pageX: " + event.clientX + ", pageY: " + event.clientY );
+
+  //$( "#log" ).text( "pageX: " + event.pageX + ", pageY: " + event.pageY );
+});*/
+
+$(document).mouseleave(function (event) {
+    var relativeX = (event.pageX - $(event.target).offset().left),
+                relativeY = (event.pageY - $(event.target).offset().top);
+    console.log("pageX: " + relativeX + ", pageY: " + relativeY );
+});
 // example request
 //getAjax('http://fipeapi.appspot.com/api/1/carros/veiculo/21/4828/2013-1.json', function(data){ console.log(data); });
