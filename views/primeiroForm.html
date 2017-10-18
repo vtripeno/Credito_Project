@@ -31,40 +31,47 @@
 		<div class="container">
 			<section class="row"  id="head">
 				<img class="imagem" src="../images/creditas.png" style="margin-left: auto; margin-right: auto; margin-top: 30px; margin-bottom: 30px;  width: 25%;"/>
-	        </section>        	
+	        		</section>
 
-	        <section class="row">
+	        		<section class="row">
 				<div class="col-sm-4"></div>
-	            <div class="col-sm-4">
-            		<h3> Empréstimos para intercambistas com veículo em garantia</h3>
-            		<h1> Digite o valor que você precisa para realizar seu intercâmbio </h1><picture></picture>
-		            <input type="text" name="valoremprestimo" class="form-control" id="valoremprestimo"/>
-	            </div>
-	            <div class="col-sm-4"></div>
-	            
-           </section>
+			            <div class="col-sm-4">
+		            		<h3> Empréstimos para intercambistas com veículo em garantia</h3>
+		            		<h1> Digite o valor que você precisa para realizar seu intercâmbio </h1><picture></picture>
+				            <input type="text" name="valoremprestimo" class="tamanho-caixas form-control" id="valoremprestimo"
+				             oninput="validateForm('btnDadosVeiculo')" />
+			            </div>
+			            <div class="col-sm-4"></div>
 
-           <section class="row">
-           		<div class="col-sm-4"></div>
-           		<div class="col-sm-4">
-           			<h2> Informe alguns de seus dados</h2>
-	            	<p> Fique tranquilo, eles estarão sob sigilo! </p>
-	            	<form>
-						<p>Nome completo:</p> <input type="text" class="form-control" name="nome"><br>
-						<p>CPF: </p><input type="text" class="form-control" name="cpf"><br>
-						<p>Data de Nascimento: </p><input type="text" class="form-control" name="datanascimento"><br>
-						<p>E-mail: </p><input type="text" class="form-control" name="email"><br>
-						<p>Telefone: </p><input type="text" class="form-control" name="telefone"><br>
-					</form>
+		           </section>
 
-					<form action="dadosveiculo.html">
-					    <button id="btnDadosVeiculo" type="submit" class="button-donate disabled" onclick="salvarDadosCadastro('valoremprestimo')">VAMOS LÁ!</button>
-					</form>
-					<a href="dadosveiculo.html" onclick="salvarDadosCadastro('valoremprestimo')"><button class="button-donate">VAMOS LÁ!</button></a>
+           			<section class="row">
+		           		<div class="col-sm-4"></div>
+		           		<div class="col-sm-4">
+		           			<h2> Informe alguns de seus dados</h2>
+			            	<p> Fique tranquilo, eles estarão sob sigilo! </p>
+			            	<form>
+					<p>Nome completo:</p> <input type="text" class="tamanho-caixas form-control"
+					id="nome" oninput="validateForm('btnDadosVeiculo')"><br>
+					<p>CPF: </p><input type="text" class="tamanho-caixas form-control"
+					id="cpf" oninput="validateForm('btnDadosVeiculo')"><br>
+					<p>Data de Nascimento: </p><input type="text" class="tamanho-caixas form-control"
+					 id="datanascimento" oninput="validateForm('btnDadosVeiculo')"><br>
+					<p>E-mail: </p><input type="text" class="tamanho-caixas form-control"
+					 id="email" type="email" oninput="validateForm('btnDadosVeiculo')"><br>
+					<p>Telefone: </p><input type="text" class="tamanho-caixas form-control"
+					 id="telefone" oninput="validateForm('btnDadosVeiculo')"><br>
+				</form>
 
-	            </div>
-	            <div class="col-sm-4"></div>
+				<form action="dadosveiculo.html" >
+				    <button id="btnDadosVeiculo" type="submit" class="button-donate disabled" onclick="salvarDadosCadastro('valoremprestimo')">VAMOS LÁ!</button>
+				</form>
+				<!--<a href="dadosveiculo.html" onclick="salvarDadosCadastro('valoremprestimo')"><button class="button-donate">VAMOS LÁ!</button></a>-->
+
+			            </div>
+			            <div class="col-sm-4"></div>
 			</section>
+		</div>
 			<!--
 
 			<section class="row" >
@@ -106,6 +113,6 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 	-->
 
-		<a href="segundoForm.html"><button>BUTÃO</button></a>
+		<!--<a href="segundoForm.html"><button>BUTÃO</button></a>-->
 	</body>
 </html>

@@ -50,7 +50,6 @@ function httpGet(theUrl) {
     //alert(json);
     var obj = JSON.parse(json);
     //alert(obj.cars[1].name);
-    x = ""
     for (i in obj.cars) {
         console.log(obj.cars[i].name);
     }
@@ -105,6 +104,13 @@ function ativarElemento(id) {
     elemento.classList.remove("disabled");
 }
 
+function desativarElemento(id) {
+    var  elemento = document.getElementById(id);
+    elemento.hidden = false;
+    elemento.disabled = true;
+    elemento.classList.add("disabled");
+}
+
 function salvarDadosVeiculo(id1, id2) {
     localStorage["car.nome"] = document.getElementById(id1).innerHTML;
     localStorage["car.valor"] = document.getElementById(id2).innerHTML;
@@ -123,6 +129,27 @@ function carregarDadosCadastro(id1) {
     document.getElementById(id1).innerHTML = localStorage["pessoa.emprestimo"];
 }
 
+function validateForm(id) {
+  var fields = ["valoremprestimo", "nome", "cpf", "datanascimento", "email", "telefone"]
+
+  var i, l = fields.length;
+  var fieldname;
+  for (i = 0; i < l; i++) {
+    fieldname = fields[i];
+    console.log(fieldname);
+    console.log(document.getElementById(fieldname).value);
+    //console.log(document.getElementById(fieldname).value);
+    var elemento = document.getElementById(fieldname).value;
+    console.log(elemento);
+    if (elemento === "") {
+      //alert(fieldname + " não pode estar em branco");
+      desativarElemento(id);
+      return false;
+    }
+  }
+  ativarElemento(id);
+  return true;
+}
 
 // example request
 //getAjax('http://fipeapi.appspot.com/api/1/carros/veiculo/21/4828/2013-1.json', function(data){ console.log(data); });
