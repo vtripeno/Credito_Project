@@ -25,54 +25,57 @@
 		<title> Creditas - Dados usuário </title>
 
 		<link href="../css/custom.css" rel="stylesheet">
-
-</script>
-
 	</head>
 
 	<body>
 		<div class="container">
 			<section class="row"  id="head">
-				<img class="imagem" src="../images/creditas.png" style="margin-left: auto; margin-right: auto; margin-top: 30px; margin-bottom: 30px;  width: 25%;"/>
-	        		</section>
+				<img class="imagem" src="../images/creditas.png" style="margin-left: auto; margin-right: auto; margin-top: 40px; margin-bottom: 30px;  width: 22% height: auto;"/>
+	        </section>
 
-	        		<section class="row">
+	        <section class="row">
 				<div class="col-sm-4"></div>
-			            <div class="col-sm-4">
-		            		<h3> Empréstimos para intercambistas com veículo em garantia</h3>
-		            		<h1> Digite o valor que você precisa para realizar seu intercâmbio </h1><picture></picture>
-				            <input type="text" name="valoremprestimo" class="tamanho-caixas form-control" id="valoremprestimo"
+			        <div class="col-sm-4">
+			          	<br><br><br><br>
+		           		<h3> Empréstimos para intercambistas com veículo em garantia</h3>
+		           		<h1> Digite o valor que você precisa para realizar seu intercâmbio </h1><br><picture></picture>
+			            <input type="text" name="valoremprestimo" class="tamanho-caixas form-control" id="valoremprestimo"
 				             oninput="validateForm('btnDadosVeiculo')" />
-			            </div>
-			            <div class="col-sm-4"></div>
+				        <p style="text-align: center;"> Valor mínimo: R$6000,00 </p>
+			        </div>
+				</div>
+		    </section>
 
-		           </section>
-
-           			<section class="row">
-		           		<div class="col-sm-4"></div>
-		           		<div class="col-sm-4">
-		           			<h2> Informe alguns de seus dados</h2>
-			            	<p> Fique tranquilo, eles estarão sob sigilo! </p>
-			            	<form>
-					<p>Nome completo:</p> <input type="text" class="tamanho-caixas form-control"
+      		<section class="row" style="background-color: #2F4F4F">
+	       		<div class="col-sm-4"></div>
+	           		<div class="col-sm-4">
+	           			<h2> Informe alguns de seus dados</h2>
+		            	<p> Fique tranquilo, eles estarão sob sigilo! </p>
+		            	<form>
+							<p><strong>Nome completo:</strong></p> <input type="text" class="tamanho-caixas form-control"
 					id="nome" oninput="validateForm('btnDadosVeiculo')"><br>
+							<p><strong>E-mail: </strong></p><input type="text" class="tamanho-caixas form-control"
+					 id="email" type="email" oninput="validateForm('btnDadosVeiculo')"><br>					
+					<!--
 					<p>CPF: </p><input type="text" class="tamanho-caixas form-control"
 					id="cpf" oninput="validateForm('btnDadosVeiculo')"><br>
 					<p>Data de Nascimento: </p><input type="text" class="tamanho-caixas form-control"
 					 id="datanascimento" oninput="validateForm('btnDadosVeiculo')"><br>
-					<p>E-mail: </p><input type="text" class="tamanho-caixas form-control"
-					 id="email" type="email" oninput="validateForm('btnDadosVeiculo')"><br>
 					<p>Telefone: </p><input type="text" class="tamanho-caixas form-control"
 					 id="telefone" oninput="validateForm('btnDadosVeiculo')"><br>
-				</form>
+					-->
+						</form>
 
+						<div class="col-sm-12">
+							<a href="../views/dadosveiculo.html"><button class="button" style="float: left;"><strong> </strong><br> Conheça nossas taxas e parcelas</button></a>
+				<!--
 				<form action="dadosveiculo.html" >
 				    <button id="btnDadosVeiculo" type="submit" class="button-donate disabled" onclick="salvarDadosCadastro('valoremprestimo')">VAMOS LÁ!</button>
 				</form>
 				<!--<a href="dadosveiculo.html" onclick="salvarDadosCadastro('valoremprestimo')"><button class="button-donate">VAMOS LÁ!</button></a>-->
-
 			            </div>
 			            <div class="col-sm-4"></div>
+			        </div>
 			</section>
 		</div>
 			<!--
