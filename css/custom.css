@@ -83,6 +83,7 @@ body {
     font-size: 0.8em;
     color: #004d1a;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 .button-blog {
@@ -135,4 +136,11 @@ header {
     z-index: 1; 
     background-color: #00663d;
     width: 100%;
+}
+
+.hr-medium {
+    width: 60%;
+    margin: auto;
+    border-width: 3px;
+    border-color: white;
 }
