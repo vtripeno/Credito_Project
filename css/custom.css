@@ -120,3 +120,19 @@ header {
    cursor: default;
    background-color: grey;
 }
+
+.linha {
+    border-bottom: 3px solid #ccff33;
+    padding-bottom: 5px;
+}
+
+.linha2 {
+    border-bottom: 3px solid #ffffff;
+    padding-bottom: 5px;
+}
+
+.background-div-form {
+    z-index: 1; 
+    background-color: #00663d;
+    width: 100%;
+}
