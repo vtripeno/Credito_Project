@@ -129,7 +129,7 @@ function carregarDadosVeiculo(id1, id2) {
 }
 
 function carregarDadosCadastro(id1) {
-    document.getElementById(id1).innerHTML = localStorage["pessoa.emprestimo"];
+    document.getElementById(id1).innerHTML = "R$ " + localStorage["pessoa.emprestimo"] + ",00";
 }
 
 function carregarDadosCadastro2(id1, id2, id3) {
@@ -167,6 +167,15 @@ function validateForm(id, flg) {
   }
   ativarElemento(id);
   return true;
+}
+
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if ( (charCode > 31 && charCode < 48) || charCode > 57) {
+        return false;
+    }
+    return true;
 }
 
 /*$( document ).on( "mousemove", function( event ) {
