@@ -171,7 +171,7 @@ function validateForm(id, flg) {
 
   var fields = flg == true ?
                     ["valoremprestimo", "nome", "email"] :
-                    ["valoremprestimo", "nome", "email", "cpf", "datanascimento", "telefone"];
+                    ["valoremprestimo", "nome", "email", "cpf", "datanascimento", "telefone", "rendamensal"];
 
   var i, l = fields.length;
   var fieldname;
