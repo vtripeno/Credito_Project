@@ -151,9 +151,21 @@ function carregarDadosCadastro2(id1, id2, id3) {
         document.getElementById(id2).readOnly = true;
         document.getElementById(id3).value = localStorage["pessoa.email"];
         document.getElementById(id3).readOnly = true;
+        document.getElementById("titulo1").hidden = true;
+        document.getElementById("titulo2").hidden = false;
+    } else {
+        document.getElementById(id1).value = "";
+        document.getElementById(id1).readOnly = false;
+        document.getElementById(id2).value = "";
+        document.getElementById(id2).readOnly = false;
+        document.getElementById(id3).value = "";
+        document.getElementById(id3).readOnly = false;
+        document.getElementById("titulo1").hidden = false;
+        document.getElementById("titulo2").hidden = true;
     }
 
 }
+
 
 function validateForm(id, flg) {
 
