@@ -59,7 +59,7 @@
                     		<p>Data de Nascimento: </p><input type="text" class="tamanho-caixas form-control"
                      id="datanascimento" oninput="validateForm('btnObrigado', false)" onkeydown="javascript: fMasc( this, mData );" maxlength="10"><br>
                             <p>Renda Mensal:</p> <input type="text" class="tamanho-caixas form-control"
-                    id="rendamensal" oninput="validateForm('btnObrigado', false)"><br>
+                    id="rendamensal" oninput="validateForm('btnObrigado', false)" onkeypress="return isNumber(event)"><br>
                             <p><strong>E-mail: </strong></p><input type="text" class="tamanho-caixas form-control"
                      id="email" type="email" oninput="validateForm('btnObrigado', false)"><br>
                             <p>Telefone: </p><input type="text" class="tamanho-caixas form-control"
