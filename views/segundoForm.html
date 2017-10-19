@@ -58,16 +58,16 @@
                      id="email" type="email" oninput="validateForm('btnObrigado', false)"><br>
                     <
                     <p>CPF: </p><input type="text" class="tamanho-caixas form-control"
-                    id="cpf" oninput="validateForm('btnObrigado', false)"><br>
+                    id="cpf" oninput="validateForm('btnObrigado', false)" onkeydown="javascript: fMasc( this, mCPF );"  maxlength="14"><br>
                     <p>Data de Nascimento: </p><input type="text" class="tamanho-caixas form-control"
-                     id="datanascimento" oninput="validateForm('btnObrigado', false)"><br>
+                     id="datanascimento" oninput="validateForm('btnObrigado', false)" onkeydown="javascript: fMasc( this, mData );" maxlength="10"><br>
                     <p>Telefone: </p><input type="text" class="tamanho-caixas form-control"
-                     id="telefone" oninput="validateForm('btnObrigado', false)"><br>
+                     id="telefone" oninput="validateForm('btnObrigado', false)" onkeydown="javascript: fMasc( this, mTel );" maxlength="14"><br>
 
                         </form>
 
-                <form action="../views/finalPage.html" >
-                    <button id="btnObrigado" type="submit" class="button-donate disabled" onclick="salvarDadosCadastro('valoremprestimo')">VAMOS LÁ!</button>
+                <form action="../views/finalPage.html" onclick="alert(document.getElementById('cpf').value)">
+                    <button id="btnObrigado" type="submit" class="button-donate disabled">VAMOS LÁ!</button>
                 </form>
                         </div>
                         <div class="col-sm-4"></div>
