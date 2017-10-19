@@ -37,11 +37,11 @@
 				<div class="col-sm-4"></div>
 			        <div class="col-sm-4">
 			          	<br><br><br><br>
-		           		<h3> Empréstimos para intercambistas com veículo em garantia</h3>
-		           		<h1> Digite o valor que você precisa para realizar seu intercâmbio </h1><br><picture></picture>
+		           		<h3> Linha de crédito para intercambistas com veículo como garantia</h3>
+		           		<h1> Digite o valor que você precisa para realizar seu intercâmbio: </h1><br><picture></picture>
 			            <input type="text" name="valoremprestimo" class="tamanho-caixas form-control" id="valoremprestimo"
 				             oninput="validateForm('btnDadosVeiculo')" onkeypress="return isNumber(event)"/>
-				        <p style="text-align: center;"> Valor mínimo: R$2000,00 </p><br>
+				        <p style="text-align: center;"> Valor mínimo: R$2.000,00 </p><br>
 			        </div>
 				</div>
 		    </section>
@@ -49,8 +49,10 @@
       		<section class="row" style="background-color: #2F4F4F">
 	       		<div class="col-sm-4"></div>
 	           		<div class="col-sm-4">
-	           			<h2> Informe alguns de seus dados</h2>
+	           			<h2> Insira nome e e-mail para realizar a simulação</h2>
+	           			<!--
 		            	<p style="text-align: center;"> Fique tranquilo, eles estarão sob sigilo! </p><br>
+		            -->
 		            	<form>
 							<p><strong>Nome completo:</strong></p> <input type="text" class="tamanho-caixas form-control"
 					id="nome" oninput="validateForm('btnDadosVeiculo', true)"><br>
@@ -61,7 +63,7 @@
 
 
 				<form action="../views/dadosveiculo.html" >
-				    <button id="btnDadosVeiculo" type="submit" class="button-donate disabled" onclick="salvarDadosCadastro('valoremprestimo','nome','email')">VAMOS LÁ!</button>
+				    <button id="btnDadosVeiculo" type="submit" class="button-donate disabled" onclick="salvarDadosCadastro('valoremprestimo','nome','email')" style="font-size: 14px;">VAMOS LÁ!</button>
 				</form>
 			            </div>
 			            <div class="col-sm-4"></div>
