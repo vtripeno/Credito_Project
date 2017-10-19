@@ -30,27 +30,28 @@
 
 	</head>
 
-	<body onload="popularCombo('marcasCombo', 'http://fipeapi.appspot.com/api/1/carros/marcas.json'); ativarElemento('pMarca'); ativarElemento('marcasCombo')">
+	<body onload="popularCombo('marcasCombo', 'http://fipeapi.appspot.com/api/1/carros/marcas.json');
+			ativarElemento('pMarca');
+			ativarElemento('marcasCombo')">
 		<div class="container ">
 			<section class="row"  id="head">
 				<img class="imagem" src="../images/creditas.png" style="margin-left: auto; margin-right: auto; margin-top: 40px; margin-bottom: 30px;  width: 22% height: auto;"/>
-		    </section>
+		    	</section>
 
 			<section class="row" >
-				<div class="col-sm-12">
-					<br><br><br>
-					<h3> Linha de crédito para intercambistas com veículo como garantia</h3>
+			   <div class="col-sm-12">
+				<br><br><br>
+				<h3> Linha de crédito para intercambistas com veículo como garantia</h3>
+				<br><br>
+			    	<p style="text-align: center; font-size: 26px;"> Agora que você ja preencheu seus dados, deixe-nos conhecer melhor o seu veículo!</p><br><br>
 			    </div>
 
-			    <div class=col-sm-4></div>
-			    <div class="col-sm-4">
-			    	<br><br>
-			    	<p style="text-align: center; font-size: 26px;"> Agora que você ja preencheu seus dados, deixe-nos conhecer melhor o seu veículo!</p><br><br>
-				</div>
-			</section>
 
-			<section class="row" style="background-color: #2F4F4F">
-				<div class="col-sm-4"></div>
+			</section>
+		</div>
+
+		<section class="row" style="background-color: #2F4F4F; margin-top: 175px; width: 101%">
+			<div class="col-sm-4"></div>
 	           		<div class="col-sm-4">
 	           			<br>
 	           			<h3> Informe os dados do seu veículo </h3>
@@ -61,40 +62,24 @@
 			    	</a>
 			    	<p id="pMarca" hidden="true">Marca:</p>
 
-					<select class="tamanho-caixas form-control" id="marcasCombo" hidden="true" onchange="fazerConsultaFipe(this, 'carrosCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculos/'); ativarElemento('pModelo')"></select><br/>
-					<p id="pModelo" hidden="true">Modelo:</p>
-					<select id="carrosCombo" class="tamanho-caixas form-control" hidden="true" disabled="true" onchange="fazerConsultaFipe(this, 'carrosAnoCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculo/'); ativarElemento('pAnoFab')"></select><br/>
-					<p id="pAnoFab" hidden="true">Ano de fabricação:</p>
-					<select id="carrosAnoCombo" class="tamanho-caixas form-control" hidden="true" disabled="true" onchange="fazerConsultaFipe('dados',  this, 'http://fipeapi.appspot.com/api/1/carros/veiculo/', true);ativarElemento('btnPropostas')"></select>
+				<select class="tamanho-caixas form-control" id="marcasCombo" hidden="true" onchange="fazerConsultaFipe(this, 'carrosCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculos/'); ativarElemento('pModelo')"></select><br/>
+				<p id="pModelo" hidden="true">Modelo:</p>
+				<select id="carrosCombo" class="tamanho-caixas form-control" hidden="true" disabled="true" onchange="fazerConsultaFipe(this, 'carrosAnoCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculo/'); ativarElemento('pAnoFab')"></select><br/>
+				<p id="pAnoFab" hidden="true">Ano de fabricação:</p>
+				<select id="carrosAnoCombo" class="tamanho-caixas form-control" hidden="true" disabled="true" onchange="fazerConsultaFipe('dados',  this, 'http://fipeapi.appspot.com/api/1/carros/veiculo/', true);ativarElemento('btnPropostas')"></select>
+
+				<div id="dados" hidden="true" style="text-align: center">
+					<h3><b>Nome do veículo:</b></h3>
+					<h3 id='nome'></h3>
+					<h3><b>Valor do veículo:</b></h3>
+					<h3 id='valor'></h3>
 				</div>
-
-				<div class=col-sm-4></div>
-
-
-			<!--<section class="row">
-				<div class=col-sm-4></div>
-				<div class="col-sm-4">
-					<button class="button-donate disabled"  id="btnCalcular" onclick="getValorJson('carrosAnoCombo','http://fipeapi.appspot.com/api/1/carros/veiculo/');ativarElemento('btnPropostas')">Calcular</button><br>
-				</div>
-				<div class=col-sm-4></div>
-			</section>-->
-
-
-				<div class=col-sm-4></div>
-				<div class="col-sm-4">
-					<div id="dados" hidden="true" style="text-align: center">
-						<h3><b>Nome do veículo:</b></h3>
-						<h3 id='nome'></h3>
-						<h3><b>Valor do veículo:</b></h3>
-						<h3 id='valor'></h3>
-					</div>
-					<form action="../views/propostas.html">
-					    <button id="btnPropostas" type="submit" class="button-donate disabled" onclick="salvarDadosVeiculo('nome', 'valor')" style="font-size: 12px;">VER MINHAS OPÇÕES</button>
-					</form>
-				</div>
-				<div class=col-sm-4></div>
-			</section>
-	    	</div>
+				<form action="../views/propostas.html">
+				    <button id="btnPropostas" type="submit" class="button-donate disabled" onclick="salvarDadosVeiculo('nome', 'valor')" style="font-size: 12px;">VER MINHAS OPÇÕES</button>
+				</form>
+			</div>
+			<div class=col-sm-4></div>
+		</section>
 
 	</body>
 </html>
