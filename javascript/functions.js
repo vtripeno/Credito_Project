@@ -73,17 +73,28 @@ function popularCombo(id, url, prefixId) {
     }
 }
 
-function fazerConsultaFipe(sel, comb, url) {
+function fazerConsultaFipe(sel, comb, url, flgExibir) {
     //alert(sel.options[sel.selectedIndex].text);
     //alert(sel.options[sel.selectedIndex].value);
-    var selecao = document.getElementById(comb);
-    ativarElemento(comb);
-    if(selecao != null) {
-        while (selecao.options.length > 0) {
-            selecao.remove(0);
+    if(flgExibir == true) {
+        document.getElementById(sel).hidden = false;
+        var elemento = comb.options[comb.selectedIndex].value;
+        var json = httpGet(url + elemento + ".json").cars;
+        var elementoTarget = document.getElementById('valor');
+        var elementoTarget2 = document.getElementById('nome');
+        elementoTarget2.innerHTML = json.name;
+        elementoTarget.innerHTML = json.preco;
+    } else {
+        var selecao = document.getElementById(comb);
+        ativarElemento(comb);
+        if(selecao != null) {
+            while (selecao.options.length > 0) {
+                selecao.remove(0);
+            }
         }
+        popularCombo(comb, url+sel.options[sel.selectedIndex].value+".json", sel.options[sel.selectedIndex].value);
     }
-    popularCombo(comb, url+sel.options[sel.selectedIndex].value+".json", sel.options[sel.selectedIndex].value);
+
 
 }
 
