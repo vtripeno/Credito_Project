@@ -116,8 +116,11 @@ function salvarDadosVeiculo(id1, id2) {
     localStorage["car.valor"] = document.getElementById(id2).innerHTML;
 }
 
-function salvarDadosCadastro(id1) {
+function salvarDadosCadastro(id1, id2, id3) {
     localStorage["pessoa.emprestimo"] = document.getElementById(id1).value;
+    localStorage["pessoa.nome"] = document.getElementById(id2).value;
+    localStorage["pessoa.email"] = document.getElementById(id3).value;
+    localStorage["pessoa.flgCarga"] = true;
 }
 
 function carregarDadosVeiculo(id1, id2) {
@@ -129,8 +132,23 @@ function carregarDadosCadastro(id1) {
     document.getElementById(id1).innerHTML = localStorage["pessoa.emprestimo"];
 }
 
-function validateForm(id) {
-  var fields = ["valoremprestimo", "nome", "email"/*, "cpf", "datanascimento", "telefone"*/]
+function carregarDadosCadastro2(id1, id2, id3) {
+    if(localStorage["pessoa.flgCarga"] == "true") {
+        document.getElementById(id1).value = localStorage["pessoa.emprestimo"];
+        document.getElementById(id1).readOnly = true;
+        document.getElementById(id2).value = localStorage["pessoa.nome"];
+        document.getElementById(id2).readOnly = true;
+        document.getElementById(id3).value = localStorage["pessoa.email"];
+        document.getElementById(id3).readOnly = true;
+    }
+
+}
+
+function validateForm(id, flg) {
+
+  var fields = flg == true ?
+                    ["valoremprestimo", "nome", "email"] :
+                    ["valoremprestimo", "nome", "email", "cpf", "datanascimento", "telefone"];
 
   var i, l = fields.length;
   var fieldname;

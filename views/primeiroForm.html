@@ -53,72 +53,21 @@
 		            	<p style="text-align: center;"> Fique tranquilo, eles estarão sob sigilo! </p><br>
 		            	<form>
 							<p><strong>Nome completo:</strong></p> <input type="text" class="tamanho-caixas form-control"
-					id="nome" oninput="validateForm('btnDadosVeiculo')"><br>
+					id="nome" oninput="validateForm('btnDadosVeiculo', true)"><br>
 							<p><strong>E-mail: </strong></p><input type="text" class="tamanho-caixas form-control"
-					 id="email" type="email" oninput="validateForm('btnDadosVeiculo')"><br>
-					<!--
-					<p>CPF: </p><input type="text" class="tamanho-caixas form-control"
-					id="cpf" oninput="validateForm('btnDadosVeiculo')"><br>
-					<p>Data de Nascimento: </p><input type="text" class="tamanho-caixas form-control"
-					 id="datanascimento" oninput="validateForm('btnDadosVeiculo')"><br>
-					<p>Telefone: </p><input type="text" class="tamanho-caixas form-control"
-					 id="telefone" oninput="validateForm('btnDadosVeiculo')"><br>
-					-->
+					 id="email" type="email" oninput="validateForm('btnDadosVeiculo', true)"><br>
+
 						</form>
 
-						<!--<div class="col-sm-12">
-							<a href="../views/dadosveiculo.html"><button class="button" style="float: left;"><strong> </strong><br> Vamos lá! </button></a>-->
 
 				<form action="../views/dadosveiculo.html" >
-				    <button id="btnDadosVeiculo" type="submit" class="button-donate disabled" onclick="salvarDadosCadastro('valoremprestimo')">VAMOS LÁ!</button>
+				    <button id="btnDadosVeiculo" type="submit" class="button-donate disabled" onclick="salvarDadosCadastro('valoremprestimo','nome','email')">VAMOS LÁ!</button>
 				</form>
-				<!--<a href="dadosveiculo.html" onclick="salvarDadosCadastro('valoremprestimo')"><button class="button-donate">VAMOS LÁ!</button></a>-->
 			            </div>
 			            <div class="col-sm-4"></div>
 			        </div>
 			</section>
 		</div>
-			<!--
 
-			<section class="row" >
-				<div class="col-sm-12">
-			    		<p> Quanto vale seu veículo? </p>
-			    	</div>
-
-			    	<div class="col-sm-12">
-					<select id="marcasCombo" onchange="fazerConsultaFipe(this, 'carrosCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculos/');"></select><br/>
-					<select id="carrosCombo" hidden="true" disabled="true" onchange="fazerConsultaFipe(this, 'carrosAnoCombo', 'http://fipeapi.appspot.com/api/1/carros/veiculo/');"></select><br/>
-					<select id="carrosAnoCombo" hidden="true" disabled="true" onchange="ativarElemento('btnCalcular')"></select>
-				</div>
-			</section>
-
-
-			<section class="row">
-				<div class="col-sm-12">
-					<button disabled="true"  id="btnCalcular" onclick="getValorJson('carrosAnoCombo','http://fipeapi.appspot.com/api/1/carros/veiculo/')">Calcular</button><br>
-				</div>
-			</section>
-
-			<section class="row">
-
-				<div class="col-sm-12">
-					<h1 id='nome'></h1>
-					<h1 id='valor'></h1>
-					<a href="dadosveiculo.html"><button>Dados veículo</button></a>
-				</div>
-			</section>
-	    	</div>
-	    	-->
-
-	    	 <!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-		<!--
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-	-->
-
-		<!--<a href="segundoForm.html"><button>BUTÃO</button></a>-->
 	</body>
 </html>
